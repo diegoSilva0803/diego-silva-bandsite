@@ -1,0 +1,53 @@
+$headerTextSize: 1.5rem; //24px
+$headerLine: 2rem; //32px
+
+$pTextSize: 0.8125rem; //13px
+$pLine: 1.125rem; //18px
+// --------------------------------------------------------------------------
+
+$headerTextSizeDesk: 3.75rem; //60px
+$headerLineDesk: 4.25rem; //68px
+
+$sectionHeaderSizeDesk: 2.25rem; //36px
+$sectionHeaderLineDesk: 2.75rem; //44px
+
+$subHeaderDesk: 1.5rem;
+$subHeaderLineDesk: 2rem;
+
+$pTextBodySize: 0.875rem;
+$pTextBodyLine: 1.375rem;
+
+$pTextFooterSize: 0.875rem;
+$pTextFooterLine: 1.25rem;
+
+// ----------------------------------------------------------------------------
+$primary-c-b: #323232;
+$primary-c-s: #afafaf;
+$primary-c-w: #ffffff;
+
+$secondary-c-b: #000000;
+$secondary-c-m: #e1e1e1;
+$secondary-c-a: #fafafa;
+
+@mixin textStyle($fontFamily, $fontSize, $lineH, $color) {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  line-height: $lineH;
+  color: $color;
+}
+
+@mixin itemDirection($display, $justify, $align, $direction) {
+  display: $display;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@mixin quote($fontSize, $fontWeight, $lineHeight, $padTop, $padBot, $margin) {
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
+  padding-top: $padTop;
+  padding-bottom: $padBot;
+  margin-right: $margin;
+}
