@@ -152,6 +152,7 @@ function addComment(event) {
   if (userComment.trim() === "" || userName.trim() === "") {
     nameInput.style.outline = "1px solid red";
     commentInput.style.outline = "1px solid red";
+    alert("You cannot leave the boxes empty!")
     return;
   }
 
@@ -170,7 +171,7 @@ function addComment(event) {
 
   const userImage = document.createElement("img");
   userImage.classList.add("comment__user_image");
-  updatedComment.appendChild(userImage);
+  updatedComment.appendChild(userImage).src = "assets/Images/Mohan-muruge.jpg";
 
   const wrapper = document.createElement("div");
   wrapper.classList.add("wrapper__comment");
