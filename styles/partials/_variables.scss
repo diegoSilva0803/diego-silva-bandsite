@@ -51,3 +51,17 @@ $secondary-c-a: #fafafa;
   padding-bottom: $padBot;
   margin-right: $margin;
 }
+
+@mixin boxSize($widthSize, $borderRadius, $pad, $border, $bg-color) {
+  width: $widthSize;
+  border-radius: $borderRadius;
+  padding: $pad;
+  border: $border;
+  background-color: $bg-color;
+}
+
+@mixin textBox($fontFamily, $fontWeight, $fontSize) {
+  font-family: $fontFamily;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+}

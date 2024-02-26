@@ -1,0 +1,580 @@
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/Font/AvenirNextLTPro-Regular.otf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/Font/AvenirNextLTPro-Demi.otf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/Font/AvenirNextLTPro-Bold.otf");
+  font-weight: 700;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Avenir Next";
+}
+
+h1 {
+  font-family: "Avenir Next";
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #323232;
+  font-weight: 600;
+}
+
+ul {
+  display: flex;
+  padding-left: 0;
+  margin: 0;
+}
+
+.logo-head {
+  font-family: "Avenir Next";
+  font-size: 1.5rem;
+  line-height: 0;
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.logoMark {
+  display: flex;
+  justify-content: center;
+}
+
+.sub-header {
+  font-family: "Avenir Next";
+  font-size: 0.875rem;
+  line-height: 0;
+  color: #323232;
+}
+
+.nav-link:nth-of-type(2) {
+  border-bottom: 0.1875rem solid white;
+}
+
+p {
+  font-family: "Avenir Next";
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  color: #323232;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+  display: flex;
+}
+li a {
+  font-size: 0.8125rem;
+  display: flex;
+}
+
+.nav-link {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.nav-link:hover {
+  border-bottom: 3px solid white;
+  display: flex;
+}
+.nav-link:hover a {
+  font-weight: 700;
+}
+
+ul .nav-link {
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid transparent;
+}
+ul .nav-link a {
+  padding: 0.625rem;
+}
+ul .nav-link:hover {
+  border-bottom: 3px solid white;
+  display: flex;
+  font-family: "Avenir Next";
+}
+
+section:nth-of-type(1) {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/assets/Images/hero-shows.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 40svh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+section:nth-of-type(1) h1,
+section:nth-of-type(1) p {
+  margin: 0;
+  color: #ffffff;
+}
+section:nth-of-type(1) p {
+  font-weight: 400;
+  font-size: 14px;
+  padding-bottom: 0.7rem;
+}
+section:nth-of-type(1) h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  padding-bottom: 16px;
+}
+section:nth-of-type(1) .showTextCont {
+  width: 70%;
+}
+
+.showContainer {
+  padding: 0 1rem;
+}
+
+iframe {
+  height: 7.5rem;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.ticket__section {
+  padding-bottom: 1rem;
+}
+.ticket__section .show_header {
+  padding: 0 1rem;
+}
+
+.show__container--2 {
+  display: none;
+}
+
+.show__container {
+  border-bottom: 1px solid #e1e1e1;
+  padding: 0 1rem;
+}
+
+.show__container:hover {
+  background-color: #fafafa;
+}
+
+.show__container:active {
+  background-color: #e1e1e1;
+}
+
+.shows__button {
+  font-size: 10px;
+  font-weight: 700;
+  font-family: "Avenir Next";
+  background-color: #323232;
+  color: #ffffff;
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  padding: 0 50px;
+  margin-bottom: 1rem;
+}
+.shows__button:hover {
+  background-color: #000000;
+}
+
+.shows__label {
+  color: #afafaf;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 20px;
+  font-family: "Avenir Next";
+  margin-bottom: 5px;
+}
+
+.shows__text {
+  font-size: 14px;
+  font-family: "Avenir Next";
+  margin-top: 0;
+}
+.shows__text:nth-of-type(2) {
+  font-weight: 600;
+}
+
+footer {
+  background-color: #323232;
+  padding: 0 1rem;
+  padding-bottom: 1rem;
+}
+footer p,
+footer h2,
+footer h1 {
+  color: #ffffff;
+}
+footer img {
+  padding-right: 1.5rem;
+}
+footer p {
+  padding-bottom: 1rem;
+  margin-bottom: 0;
+}
+footer .footer-group {
+  font-weight: 600;
+}
+footer .footer-header.first,
+footer .footer-header.second {
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+footer .footer-header.second {
+  padding-top: 24px;
+  padding-bottom: 1rem;
+}
+
+.footer-socialText {
+  margin-top: 0;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.footer-socialIcons {
+  padding-bottom: 0.8125rem;
+}
+
+nav {
+  background-color: #323232;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+nav a,
+nav h2 {
+  color: #ffffff;
+}
+
+.heroTextCont {
+  display: flex;
+  justify-content: 0;
+  align-items: 0;
+  flex-direction: 0;
+}
+.heroTextCont .heroText {
+  display: flex;
+  justify-content: 0;
+  align-items: center;
+  flex-direction: 0;
+  padding-left: 1rem;
+}
+
+small {
+  color: white;
+  font-size: 0.7rem;
+}
+
+@media (max-width: 767px) {
+  .footer-header.first {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .showContainer {
+    padding: 0 36px;
+  }
+  section:nth-of-type(1) {
+    height: 50vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  section:nth-of-type(1) p {
+    font-weight: 400;
+    font-size: 22px;
+    padding-bottom: 0.7rem;
+  }
+  section:nth-of-type(1) h1 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 700;
+    padding-bottom: 16px;
+    line-height: 44px;
+  }
+  section:nth-of-type(1) .showTextCont {
+    width: 70%;
+  }
+  section:nth-of-type(1) .showTexts {
+    width: 45%;
+  }
+  iframe {
+    height: 7.5rem;
+    width: 50%;
+    border-radius: 4px;
+  }
+  .footer-header.first {
+    display: flex;
+    padding-top: 3rem;
+    margin: 0;
+    left: 80%;
+    position: absolute;
+  }
+  header {
+    padding: 0;
+  }
+  .logoMark {
+    display: flex;
+    padding: 16px 0;
+    padding-right: 36px;
+  }
+  nav {
+    display: flex;
+    flex-direction: row;
+    padding-left: 2.25rem;
+  }
+  nav .nav-link {
+    padding: 16px 0;
+    margin: 0 36px;
+  }
+  .shows__label {
+    display: none;
+  }
+  .ticket__section {
+    padding-bottom: 1rem;
+  }
+  .ticket__section .show_header {
+    font-size: 36px;
+    padding: 0 36px;
+    font-weight: 600;
+  }
+  .show__container, .show__container--2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 36px;
+    padding-top: 1rem;
+  }
+  .shows__button--2 {
+    width: 150px;
+    min-width: 150px;
+    visibility: hidden;
+  }
+  .shows__button {
+    width: 150px;
+    min-width: 150px;
+    padding: 0 32px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .shows__text, .shows__label--2 {
+    min-width: 150px;
+  }
+  .shows__label--2 {
+    color: #afafaf;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
+    font-family: "Avenir Next";
+    margin-bottom: 5px;
+  }
+  footer {
+    padding: 0 2.25rem;
+    padding-bottom: 1rem;
+  }
+  footer img {
+    padding-right: 1.5rem;
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+  footer p {
+    padding-bottom: 1rem;
+    margin-bottom: 0;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  footer .footer-group {
+    font-weight: 600;
+  }
+  footer .footer-main,
+  footer .footer-main-outter,
+  footer .footer-main-inner,
+  footer .footer-brand {
+    display: flex;
+  }
+  footer .footer-container-main {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+  }
+  footer .footer-main {
+    flex-direction: column;
+  }
+  footer .footer-socialIcons {
+    display: flex;
+    align-items: center;
+    padding-top: 24px;
+    padding-bottom: 16px;
+  }
+  footer .footer-socialText {
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    margin-right: 2.75rem;
+    font-size: 2.25rem;
+    font-weight: 600;
+  }
+  footer .footer-header.second {
+    display: none;
+  }
+}
+@media (min-width: 1280px) {
+  .showContainer {
+    display: flex;
+    flex-direction: row;
+  }
+  .div__container {
+    margin-top: 34px;
+    margin-left: 32px;
+  }
+  section:nth-of-type(1) {
+    height: 80vh;
+    width: 100vw;
+    padding: 0 80px;
+  }
+  section:nth-of-type(1) p {
+    font-weight: 400;
+    font-size: 22px;
+    padding-bottom: 0.7rem;
+  }
+  section:nth-of-type(1) h1 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 44px;
+  }
+  section:nth-of-type(1) .showTextCont {
+    width: 100%;
+  }
+  section:nth-of-type(1) .showTexts {
+    width: 40%;
+    padding: 0;
+  }
+  section:nth-of-type(1) iframe {
+    height: 7.5rem;
+    max-height: 100%;
+    width: 70%;
+    border-radius: 4px;
+    padding: 0;
+  }
+  section:nth-of-type(1) .song {
+    width: 50%;
+  }
+  .shows__label {
+    display: none;
+  }
+  .ticket__section {
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+  }
+  .ticket__section .show_header {
+    font-size: 36px;
+    padding: 0 80px;
+    font-weight: 600;
+  }
+  .show__container, .show__container--2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 36px;
+  }
+  .shows__button--2 {
+    width: 150px;
+    min-width: 150px;
+    visibility: hidden;
+  }
+  .shows__button {
+    width: 150px;
+    min-width: 150px;
+    padding: 0 32px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .shows__text, .shows__label--2 {
+    min-width: 210px;
+  }
+  .header .footer-header.second {
+    display: none;
+  }
+  .footer-header.first {
+    display: flex;
+    padding-top: 3rem;
+    margin: 0;
+    left: 86%;
+    position: absolute;
+  }
+  header {
+    padding: 0;
+  }
+  .logoMark {
+    display: flex;
+    padding: 1rem 0;
+    padding-right: 2.25rem;
+  }
+  nav {
+    display: flex;
+    flex-direction: row;
+    padding-left: 5rem;
+  }
+  nav .nav-link {
+    padding: 1rem 0;
+    margin: 0 2.25rem;
+  }
+  footer {
+    padding: 0 5rem;
+    padding-bottom: 1rem;
+  }
+  footer img {
+    margin-right: 1.5rem;
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+  footer p {
+    padding-bottom: 1rem;
+    margin-bottom: 0;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  footer .footer-group {
+    font-weight: 600;
+  }
+  footer .footer-main,
+  footer .footer-main-outter,
+  footer .footer-main-inner,
+  footer .footer-brand {
+    display: flex;
+  }
+  footer .footer-container-main {
+    display: flex;
+    padding-bottom: 1.5rem;
+  }
+  footer .footer-main {
+    flex-direction: column;
+  }
+  footer .footer-socialIcons {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 0 1rem 0;
+  }
+  footer .footer-socialText {
+    padding: 1.5rem 2rem 1rem 0;
+    font-size: 2.25rem;
+    font-weight: 600;
+  }
+  footer .footer-container {
+    padding-right: 2.25rem;
+  }
+}/*# sourceMappingURL=shows.css.map */

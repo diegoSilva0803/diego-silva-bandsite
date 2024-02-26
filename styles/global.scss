@@ -1,0 +1,169 @@
+@use "./partials/typography" as *;
+@use "./partials/variables" as *;
+
+body {
+  font-family: "Avenir Next";
+}
+
+input {
+  @include boxSize(100%, 4px, 0.75rem, 1px solid #e1e1e1, #fafafa);
+  min-height: 2.25rem;
+  font-size: medium;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+  &::placeholder {
+    @include textBox("Avenir Next", 100, medium);
+    color: #000000;
+  }
+}
+
+textarea {
+  @include boxSize(100%, 4px, 0.75rem, 1px solid #e1e1e1, #fafafa);
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+  &::placeholder {
+    @include textBox("Avenir Next", 100, medium);
+    color: #000000;
+  }
+}
+
+label {
+  color: #afafaf;
+  font-size: $pTextSize;
+  line-height: 4px;
+}
+
+button {
+  background-color: #323232;
+  color: #ffffff;
+  height: 2.5rem;
+  width: 100%;
+  padding: 0 2rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  &:hover {
+    background-color: #000000;
+    color: #ffffff;
+  }
+}
+
+.box__comment-img {
+  margin-right: 16px;
+  margin-top: 22px;
+}
+
+.updated__img {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.box__comment {
+  display: flex;
+  justify-content: center;
+}
+
+.new__user_image {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+}
+
+.thread__comment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment__user_image--2,
+.comment__user_image {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background-color: #afafaf;
+}
+
+.comment_list__item {
+  display: flex;
+  flex-direction: row;
+  max-width: 770px;
+  border-bottom: 1px solid #e1e1e1;
+  padding: 16px 0;
+  & p {
+    margin: 0;
+    padding-top: 10px;
+  }
+}
+
+.name-date__comment {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.comment__name {
+  font-weight: 600;
+}
+
+.comment__date {
+  color: #afafaf;
+  font-size: 14px;
+}
+
+.comment-section {
+  margin-bottom: 24px;
+}
+
+input[type=text], textarea {
+  box-sizing: border-box;
+  border: 1px solid #e1e1e1;
+  transition: 0.3s;
+  outline: none;
+}
+
+input[type=text]:focus, textarea:focus {
+  border: 1px solid #000000;
+}
+
+input:invalid {
+  border: none;
+  outline: 1px solid red
+}
+
+@media (min-width: 768px) {
+  .button__comment {
+    display: flex;
+    justify-content: flex-end;
+    & .comment__button {
+      width: 40%;
+    }
+  }
+
+  .box__comment-img {
+    margin-top: 16px;
+  }
+
+  #name {
+    min-height: 48px;
+  }
+
+  .comment_list__item{
+    max-width: 635px;
+  }
+
+  .comment_list__item p{
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .new__user_image, .comment__user_image--2,
+  .comment__user_image {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+
+// comment-button.onclick = someFunction;

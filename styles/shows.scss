@@ -32,28 +32,12 @@ ul {
   @include textStyle("Avenir Next", 0.875rem, 0, $primary-c-b);
 }
 
-.nav-link:nth-of-type(1) {
+.nav-link:nth-of-type(2) {
   border-bottom: 0.1875rem solid white;
 }
 
 p {
   @include textStyle("Avenir Next", $pTextSize, $pLine, $primary-c-b);
-}
-
-.quote,
-.quoter {
-  @include textStyle("Avenir Next", $pTextSize, $pLine, $primary-c-b);
-  font-weight: 600;
-  margin: 0;
-}
-
-.quote {
-  padding-bottom: 0.3rem;
-}
-
-.quoter {
-  padding-bottom: 1.5rem;
-  font-weight: 400;
 }
 
 a {
@@ -97,26 +81,96 @@ ul .nav-link {
   }
 }
 
-section {
-  padding: 0 1rem;
-  & h1 {
-    padding-top: 1.5rem;
-    padding-bottom: 1rem;
+
+section:nth-of-type(1) {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(/assets/Images/hero-shows.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 40svh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  & h1,
+  p {
     margin: 0;
+    color: $primary-c-w;
   }
-  img {
-    padding-bottom: 1rem;
-    height: 100%;
-    width: 100%;
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    padding-bottom: 0.7rem;
+  }
+  h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    padding-bottom: 16px;
+  }
+  .showTextCont {
+    width: 70%;
   }
 }
 
-.images {
-  padding-bottom: 0;
+.showContainer {
+  padding: 0 1rem;
 }
 
-header {
-  padding: 0;
+iframe {
+  height: 7.5rem;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.ticket__section {
+  padding-bottom: 1rem;
+  & .show_header {
+    padding: 0 1rem;
+  }
+}
+
+.show__container--2 {
+  display: none;
+}
+
+.show__container {
+  border-bottom: 1px solid #e1e1e1;
+  padding: 0 1rem;
+}
+
+.shows__button {
+  font-size: 10px;
+  font-weight: 700;
+  font-family: "Avenir Next";
+  background-color: #323232;
+  color: #ffffff;
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  padding: 0 50px;
+  margin-bottom: 1rem;
+  &:hover {
+    background-color: #000000;
+  }
+}
+
+.shows__label {
+  color: #afafaf;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 20px;
+  font-family: "Avenir Next";
+  margin-bottom: 5px;
+}
+
+.shows__text {
+  font-size: 14px;
+  font-family: "Avenir Next";
+  margin-top: 0;
+  &:nth-of-type(2) {
+    font-weight: 600;
+  }
 }
 
 footer {
@@ -150,6 +204,7 @@ footer {
 }
 
 .footer-socialText {
+  margin-top: 0;
   padding-top: 1.5rem;
   padding-bottom: 1rem;
   font-size: 1.5rem;
@@ -172,21 +227,6 @@ nav {
   }
 }
 
-.heroContainer {
-  background-image: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url(../assets/Images/hero-bio.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 50vw;
-  width: 100%;
-  max-height: 100%;
-  display: flex;
-  & .heroText {
-    color: $primary-c-w;
-    margin: 0;
-  }
-}
-
 .heroTextCont {
   @include itemDirection(flex, 0, 0, 0);
   & .heroText {
@@ -200,10 +240,6 @@ small {
   font-size: 0.7rem;
 }
 
-.gallery {
-  background-color: $secondary-c-a;
-}
-
 @media (max-width: 767px) {
   .footer-header.first {
     display: none;
@@ -211,65 +247,49 @@ small {
 }
 
 @media (min-width: 768px) and (max-width: 1279px) {
+  .showContainer {
+    padding: 0 36px;
+  }
+
+  section:nth-of-type(1) {
+    height: 50vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    p {
+      font-weight: 400;
+      font-size: 22px;
+      padding-bottom: 0.7rem;
+    }
+    h1 {
+      margin: 0;
+      font-size: 36px;
+      font-weight: 700;
+      padding-bottom: 16px;
+      line-height: 44px;
+    }
+    .showTextCont {
+      width: 70%;
+    }
+    .showTexts {
+      width: 45%;
+    }
+  }
+
+  iframe {
+    height: 7.5rem;
+    width: 50%;
+    border-radius: 4px;
+  }
+
   .footer-header.first {
     display: flex;
     padding-top: 3rem;
     margin: 0;
     left: 80%;
     position: absolute;
-  }
-  .heroTextCont {
-    padding-left: 2.25rem;
-    padding-right: 0;
-    & .heroText {
-      font-size: $headerTextSizeDesk;
-      line-height: $headerLineDesk;
-      font-weight: 600;
-      padding-left: 0;
-    }
-  }
-
-  section {
-    padding: 0 2.25rem;
-    & h1 {
-      padding-top: 3rem;
-      padding-bottom: 2.25rem;
-      margin: 0;
-      font-size: $sectionHeaderSizeDesk;
-      line-height: $sectionHeaderLineDesk;
-      font-weight: 700;
-    }
-    & .sub-header {
-      font-size: $subHeaderDesk;
-      line-height: $subHeaderLineDesk;
-      font-weight: 600;
-    }
-    & p {
-      font-size: $pTextBodySize;
-      line-height: $pTextBodyLine;
-      font-weight: 400;
-    }
-    .images {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 1.7rem;
-      padding-bottom: 2.25rem;
-      & img {
-        display: flex;
-        width: 30%;
-        padding: 0;
-      }
-    }
-    img {
-      padding: 0;
-    }
-    .quote {
-      @include quote(1.5rem, 600, 2rem, 1.5rem, 0.875rem, 0);
-    }
-    .quoter {
-      padding-bottom: 2.25rem;
-    }
   }
 
   header {
@@ -289,24 +309,57 @@ small {
       margin: 0 36px;
     }
   }
-  .section-one {
-    padding: 0 2.25rem;
-  }
-  .section-p {
-    display: flex;
 
-    & p {
-      flex-direction: column;
-    }
-    & p:nth-of-type(1) {
-      padding-right: 1.5rem;
+  .shows__label {
+    display: none;
+  }
+
+  .ticket__section {
+    padding-bottom: 1rem;
+    & .show_header {
+      font-size: 36px;
+    padding: 0 36px;
+    font-weight: 600;
     }
   }
-  .heroContainer {
-    height: 60vh;
-    width: 100%;
-    max-height: 100%;
+  
+  .show__container, .show__container--2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 36px;
+    padding-top: 1rem;
+    
   }
+
+  .shows__button--2 {
+    width: 150px;
+    min-width: 150px;
+    visibility: hidden;
+  }
+
+  .shows__button {
+    width: 150px;
+    min-width: 150px;
+    padding: 0 32px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .shows__text, .shows__label--2 {
+    min-width: 150px;
+  }
+
+  .shows__label--2 {
+    color: #afafaf;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
+    font-family: "Avenir Next";
+    margin-bottom: 5px;
+  }
+
   footer {
     padding: 0 2.25rem;
     padding-bottom: 1rem;
@@ -360,6 +413,96 @@ small {
 }
 
 @media (min-width: 1280px) {
+  
+  .showContainer {
+    display: flex;
+    flex-direction: row;
+    // justify-content: space-between;
+  }
+
+  .div__container {
+    margin-top: 34px;
+    margin-left: 32px;
+  }
+  section:nth-of-type(1) {
+    height: 80vh;
+    width: 100vw;
+    padding: 0 80px;
+    // align-items: center;
+    p {
+      font-weight: 400;
+      font-size: 22px;
+      padding-bottom: 0.7rem;
+    }
+    h1 {
+      margin: 0;
+      font-size: 36px;
+      font-weight: 700;
+      // padding-bottom: 16px;
+      line-height: 44px;
+    }
+    .showTextCont {
+      width: 100%;
+    }
+    .showTexts {
+      width: 40%;
+      padding: 0;
+    }
+    iframe {
+      height: 7.5rem;
+      max-height: 100%;
+      width: 70%;
+      border-radius: 4px;
+      padding: 0;
+    }
+    .song {
+      width: 50%;
+    }
+  }
+
+  .shows__label {
+    display: none;
+  }
+
+  .ticket__section {
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    & .show_header {
+    font-size: 36px;
+    padding: 0 80px;
+    font-weight: 600;
+    }
+  }
+  
+  .show__container, .show__container--2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 36px;
+    // padding-top: 1rem;
+  }
+
+  .shows__button--2 {
+    width: 150px;
+    min-width: 150px;
+    visibility: hidden;
+  }
+
+  .shows__button {
+    width: 150px;
+    min-width: 150px;
+    padding: 0 32px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .shows__text, .shows__label--2 {
+    min-width: 210px;
+  }
+  
+  .header
   .footer-header.second {
     display: none;
   }
@@ -370,63 +513,6 @@ small {
     left: 86%;
     position: absolute;
   }
-  .heroTextCont {
-    padding-left: 5rem;
-    padding-right: 0;
-    & .heroText {
-      font-size: $headerTextSizeDesk;
-      line-height: $headerLineDesk;
-      font-weight: 600;
-      padding-left: 0;
-    }
-  }
-
-  section {
-    padding: 0 5rem;
-    & h1 {
-      padding-top: 3rem;
-      padding-bottom: 2.25rem;
-      margin: 0;
-      font-size: $sectionHeaderSizeDesk;
-      line-height: $sectionHeaderLineDesk;
-      font-weight: 700;
-    }
-    & .sub-header {
-      font-size: $subHeaderDesk;
-      line-height: $subHeaderLineDesk;
-      font-weight: 600;
-    }
-    & p {
-      font-size: $pTextBodySize;
-      line-height: $pTextBodyLine;
-      font-weight: 400;
-    }
-    .images {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 1.7rem;
-      padding-bottom: 2.25rem;
-      & img {
-        display: flex;
-        width: 30%;
-        padding: 0;
-      }
-    }
-    .section-one img {
-      padding: 0;
-      max-height: 100%;
-      width: 100%;
-      height: 80vh;
-    }
-    .quote {
-      @include quote(1.5rem, 600, 2rem, 1.5rem, 0.875rem, 23rem);
-    }
-    .quoter {
-      padding-bottom: 2.25rem;
-    }
-  }
-
   header {
     padding: 0;
   }
@@ -443,24 +529,6 @@ small {
       padding: 1rem 0;
       margin: 0 2.25rem;
     }
-  }
-  .section-one {
-    padding: 0 5.25rem;
-  }
-  .section-p {
-    display: flex;
-
-    & p {
-      flex-direction: column;
-    }
-    & p:nth-of-type(1) {
-      padding-right: 1.5rem;
-    }
-  }
-  .heroContainer {
-    height: 60vh;
-    width: 100%;
-    max-height: 100%;
   }
   footer {
     padding: 0 5rem;
@@ -508,5 +576,3 @@ small {
     }
   }
 }
-
-
