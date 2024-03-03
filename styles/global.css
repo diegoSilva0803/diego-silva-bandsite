@@ -125,12 +125,18 @@ button:hover {
   display: flex;
   flex-direction: row;
   max-width: 770px;
+  min-width: 290px;
+  width: 100%;
   border-bottom: 1px solid #e1e1e1;
   padding: 16px 0;
 }
 .comment_list__item p {
   margin: 0;
   padding-top: 10px;
+}
+
+.wrapper__comment {
+  width: 100%;
 }
 
 .name-date__comment {
@@ -183,7 +189,9 @@ input:invalid {
     min-height: 48px;
   }
   .comment_list__item {
+    min-width: 635px;
     max-width: 635px;
+    width: 100%;
   }
   .comment_list__item p {
     font-size: 14px;

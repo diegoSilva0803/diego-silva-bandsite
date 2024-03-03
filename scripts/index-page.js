@@ -1,23 +1,24 @@
-const commentList = [
-  {
-    name: "Victor Pinto",
-    date: "11/02/2023",
-    comment:
-      "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-  },
-  {
-    name: "Christina Cabrera",
-    date: "10/08/2023",
-    comment:
-      "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day. ",
-  },
-  {
-    name: "Isaac Tadesse",
-    date: "10/20/2023",
-    comment:
-      "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  },
-];
+let commentList = [];
+
+async function commentData() {
+  commentList = await bandSiteKey.getComments();
+  console.log(commentList);
+}
+
+commentData();
+
+function sortComment(x, y) {
+  if(x.commentData === newComment) {
+    return -1;
+  } else if(y.commentData === newComment) {
+    return 1
+  } else {
+    return x.timestamp - y.timestamp;
+  }
+}
+
+commentList.unshift(sortComment);
+
 const commentSection = document.querySelector(".comment-section");
 
 const conversationTitle = document.createElement("h1");
@@ -87,50 +88,56 @@ inputBox.appendChild(buttonBox);
 
 const button = document.createElement("button");
 button.classList.add("comment__button");
-button.addEventListener("click", addComment);
+form.addEventListener("submit", addComment); //Todo
 buttonBox.appendChild(button);
 button.innerText = "COMMENT";
 
-for (let j = 0; j < commentList.length; j++) {
-  const commentListItem = document.createElement("div");
-  commentListItem.classList.add("comment_list__item");
-  commentThread.appendChild(commentListItem);
+async function waitLoop() {
+  await commentData();
+  for (let j = 0; j < commentList.length; j++) {
+    const commentListItem = document.createElement("div");
+    commentListItem.classList.add("comment_list__item");
+    commentThread.appendChild(commentListItem);
 
-  const updatedComment = document.createElement("div");
-  updatedComment.classList.add("updated__img");
-  commentListItem.appendChild(updatedComment);
+    const updatedComment = document.createElement("div");
+    updatedComment.classList.add("updated__img");
+    commentListItem.appendChild(updatedComment);
 
-  const userImage = document.createElement("img");
-  userImage.classList.add("comment__user_image--2");
-  updatedComment.appendChild(userImage);
+    const userImage = document.createElement("img");
+    userImage.classList.add("comment__user_image--2");
+    updatedComment.appendChild(userImage);
 
-  const wrapper = document.createElement("div");
-  wrapper.classList.add("wrapper__comment");
-  commentListItem.appendChild(wrapper);
+    const wrapper = document.createElement("div");
+    wrapper.classList.add("wrapper__comment");
+    commentListItem.appendChild(wrapper);
 
-  const nameDate = document.createElement("div");
-  nameDate.classList.add("name-date__comment");
-  wrapper.appendChild(nameDate);
+    const nameDate = document.createElement("div");
+    nameDate.classList.add("name-date__comment");
+    wrapper.appendChild(nameDate);
 
-  const commentName = document.createElement("p");
-  commentName.classList.add("comment__name");
-  commentName.innerText = commentList[j].name;
-  nameDate.appendChild(commentName);
+    const commentName = document.createElement("p");
+    commentName.classList.add("comment__name");
+    commentName.innerText = commentList[j].name;
+    nameDate.appendChild(commentName);
 
-  const commentDate = document.createElement("p");
-  commentDate.classList.add("comment__date");
-  commentDate.innerText = commentList[j].date;
-  nameDate.appendChild(commentDate);
+    const commentDate = document.createElement("p");
+    commentDate.classList.add("comment__date");
+    commentDate.innerText = getCurrentDate(commentList[j].timestamp);
+    
+    nameDate.appendChild(commentDate);
 
-  const commentWrapper = document.createElement("div");
-  commentWrapper.classList.add("wrapper--one__comment");
-  wrapper.appendChild(commentWrapper);
+    const commentWrapper = document.createElement("div");
+    commentWrapper.classList.add("wrapper--one__comment");
+    wrapper.appendChild(commentWrapper);
 
-  const commentPost = document.createElement("p");
-  commentPost.classList.add("comment__post");
-  commentPost.innerText = commentList[j].comment;
-  commentWrapper.appendChild(commentPost);
+    const commentPost = document.createElement("p");
+    commentPost.classList.add("comment__post");
+    commentPost.innerText = commentList[j].comment;
+    commentWrapper.appendChild(commentPost);
+  }
 }
+
+waitLoop();
 
 function addComment(event) {
   event.preventDefault();
@@ -145,21 +152,21 @@ function addComment(event) {
 
   const newComment = {
     name: userName,
-    date: getCurrentDate(),
     comment: userComment,
+    // date: getCurrentDate()
   };
+
+  bandSiteKey.postComments(newComment);
 
   if (userComment.trim() === "" || userName.trim() === "") {
     nameInput.style.outline = "1px solid red";
     commentInput.style.outline = "1px solid red";
-    alert("You cannot leave the boxes empty!")
+    alert("You cannot leave the boxes empty!");
     return;
   }
 
   nameInput.style.outline = "";
   commentInput.style.outline = "";
-
-  commentList.unshift(newComment);
 
   const commentListItem = document.createElement("div");
   commentListItem.classList.add("comment_list__item");
@@ -201,10 +208,6 @@ function addComment(event) {
   commentWrapper.appendChild(commentPost);
 }
 
-function getCurrentDate() {
-  const currentDate = new Date();
-  const day = currentDate.getDate();
-  const month = currentDate.getMonth();
-  const year = currentDate.getFullYear();
-  return `${month}/${day}/${year}`;
-}
+
+
+

@@ -349,7 +349,8 @@ small {
     padding: 0 36px;
     font-weight: 600;
   }
-  .show__container, .show__container--2 {
+  .show__container,
+  .show__container--2 {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -369,7 +370,8 @@ small {
     font-size: 12px;
     font-weight: 600;
   }
-  .shows__text, .shows__label--2 {
+  .shows__text,
+  .shows__label--2 {
     min-width: 150px;
   }
   .shows__label--2 {
@@ -484,7 +486,8 @@ small {
     padding: 0 80px;
     font-weight: 600;
   }
-  .show__container, .show__container--2 {
+  .show__container,
+  .show__container--2 {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -503,7 +506,8 @@ small {
     font-size: 12px;
     font-weight: 600;
   }
-  .shows__text, .shows__label--2 {
+  .shows__text,
+  .shows__label--2 {
     min-width: 210px;
   }
   .header .footer-header.second {
