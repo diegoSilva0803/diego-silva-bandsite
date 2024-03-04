@@ -1,23 +1,19 @@
 let commentList = [];
+let newComment;
 
 async function commentData() {
   commentList = await bandSiteKey.getComments();
-  console.log(commentList);
+  commentList.sort (function sortComment(x, y) {
+    if (x.timestamp > y.timestamp) {
+      return -1;
+    } else {
+      return 1;
+    }
+})
 }
 
 commentData();
 
-function sortComment(x, y) {
-  if(x.commentData === newComment) {
-    return -1;
-  } else if(y.commentData === newComment) {
-    return 1
-  } else {
-    return x.timestamp - y.timestamp;
-  }
-}
-
-commentList.unshift(sortComment);
 
 const commentSection = document.querySelector(".comment-section");
 
@@ -123,7 +119,7 @@ async function waitLoop() {
     const commentDate = document.createElement("p");
     commentDate.classList.add("comment__date");
     commentDate.innerText = getCurrentDate(commentList[j].timestamp);
-    
+
     nameDate.appendChild(commentDate);
 
     const commentWrapper = document.createElement("div");
@@ -150,7 +146,8 @@ function addComment(event) {
   nameInput.value = "";
   commentInput.value = "";
 
-  const newComment = {
+  // const
+  newComment = {
     name: userName,
     comment: userComment,
     // date: getCurrentDate()
@@ -207,7 +204,3 @@ function addComment(event) {
   commentPost.innerText = newComment.comment;
   commentWrapper.appendChild(commentPost);
 }
-
-
-
-
